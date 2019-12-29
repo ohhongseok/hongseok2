@@ -66,3 +66,6 @@ html
 //이를 방지하기 위해 clear : both; float 속성값을 취소해 준다.
 	clear: both;
 }
+
+//floating 된 요소는 블럭 박스가 된다(블럭처럼 되버림)
+//다시말해 floating 된 요소는 display: inline-block; 을 선언한것과 마찬가지로 됨
