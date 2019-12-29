@@ -1,0 +1,66 @@
+//둘다 detail 한 layout을 만들기 위한 기법
+//floating
+//기본적으로 부유(떠있다)의 의미로 문서의 흐름에서 벗어나 유연하게 배치할 수 있다.
+//HTML 코드부분
+
+<h1>float 실습</h1>
+<div class="column1">
+	<h2>column 1</h2>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
+	parturient montes, nascetur ridiculus mus. Phasellus pharetra ornare dolor non condimentum. Morbi pharetra ut felis sed gravida. Maecenas vitae dapibus lectus, et egestas erat. Vivamus at leo gravida odio scelerisque vestibulum ut at neque. Pellentesque
+	dictum turpis sit amet leo blandit sagittis. 
+
+</div>
+<div class="column2">
+	<h2>column 2</h2>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
+	parturient montes, nascetur ridiculus mus. Phasellus pharetra ornare dolor non condimentum. Morbi pharetra ut felis sed gravida. Maecenas vitae dapibus lectus, et egestas erat. Vivamus at leo gravida odio scelerisque vestibulum ut at neque. Pellentesque
+	dictum turpis sit amet leo blandit sagittis. 
+
+</div>
+<div class="column3">
+	<h2>column 3</h2>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
+	parturient montes, nascetur ridiculus mus. Phasellus pharetra ornare dolor non condimentum. Morbi pharetra ut felis sed gravida. Maecenas vitae dapibus lectus, et egestas erat. Vivamus at leo gravida odio scelerisque vestibulum ut at neque. Pellentesque
+	dictum turpis sit amet leo blandit sagittis.
+
+</div>
+
+<div class="footer">
+		<h2>footer</h2>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
+	parturient montes, nascetur ridiculus mus. Phasellus pharetra ornare dolor non condimentum. Morbi pharetra ut felis sed gravida. Maecenas vitae dapibus lectus, et egestas erat. Vivamus at leo gravida odio scelerisque vestibulum ut at neque. Pellentesque
+	dictum turpis sit amet leo blandit sagittis.
+
+</div>
+//colum 클래스가 3개가 있고, footer클래스가 있다.
+////CSS 코드부분
+
+html
+{// 문서 전체를 잡아주는 역활
+	font-size : 20px;
+	font-weight : 180;
+	background-color : yellow;
+}
+.column1{
+	background-color : black;
+	color : white;
+	display : box;
+	text-align : center;
+  float: none;
+  //float에는 3가지 속성이 있다. left, right none,
+  //여기서 left는 왼쪽정렬, right는 오른쪽 정렬, none은 정렬을 하지 않는것
+	//width: 30%
+  //자신의 모니터 대비 좌우길이 30%만 쓰겠다는것
+}
+.column2{
+	float: left;
+	width: 30%;
+}
+.column3{
+	float: left;
+	width: 30%;
+}
+.footer{
+	clear: both;
+}
