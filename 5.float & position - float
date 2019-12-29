@@ -47,11 +47,11 @@ html
 	color : white;
 	display : box;
 	text-align : center;
-  float: none;
-  //float에는 3가지 속성이 있다. left, right none,
-  //여기서 left는 왼쪽정렬, right는 오른쪽 정렬, none은 정렬을 하지 않는것
+  	float: none;
+  	//float에는 3가지 속성이 있다. left, right none,
+  	//여기서 left는 왼쪽정렬, right는 오른쪽 정렬, none은 정렬을 하지 않는것
 	//width: 30%
-  //자신의 모니터 대비 좌우길이 30%만 쓰겠다는것
+  	//자신의 모니터 대비 좌우길이 30%만 쓰겠다는것
 }
 .column2{
 	float: left;
@@ -62,5 +62,7 @@ html
 	width: 30%;
 }
 .footer{
+//위에서 column 1~3까지 30%씩 공간을 차지하여 10%의 공간에 footer 클래스가 찡겨들어가게 된다.
+//이를 방지하기 위해 clear : both; float 속성값을 취소해 준다.
 	clear: both;
 }
