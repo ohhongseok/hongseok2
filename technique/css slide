@@ -1,0 +1,65 @@
+//////html
+<main class="gallery">
+  <audio controls>
+    <source src="https://video.1aza.com/download/c0SEVFnIF?recaptchaValue=">
+  </audio>
+  <div class="slide sticky" id="s1">
+    <h1>DPR</h1>
+  </div>
+  <div class="slide sticky" id="s2">  </div>
+  <div class="slide sticky" id="s3">  </div>
+  <div class="slide sticky" id="s4">  </div>
+  <div class="slide sticky" id="s5">  </div>
+  <div class="slide sticky" id="s6">  </div>
+  <div class="slide sticky" id="s7">  </div>
+</main>
+
+/////css
+body{
+  margin : 0;
+  padding : 0;
+}/*바디부분은 아직왜 0인지 모르겠다.*/
+.gallery{
+  width:150vh;
+  height : 100vh;
+  overflow-x:hidden;
+}
+.slide {
+  position : sticky;
+  top:0;
+  height:100vh;
+  display :flex;
+  justify-content:center;
+  align-items:center;
+  letter-spacing:0.2em;
+  color:black;
+  background-size:cover;
+  background-position:center;
+  
+ 
+}
+h1 {
+    font-size:150%;
+    text-shadow:0 2px 2px gray;
+  }
+#s1{
+   background-image: url("https://i.loli.net/2020/01/02/BuZq1KHGSxcewtT.jpg");
+}
+#s2{
+  background-image:url("https://i.loli.net/2020/01/02/BtKwWPTrSq4faZh.jpg");
+}
+#s3{
+  background-image:url("https://i.loli.net/2020/01/02/pWCH3uKSoEvrgwc.jpg");
+}
+#s4{
+   background-image:url("https://i.loli.net/2020/01/02/fB2Dx6tnXSKjycT.jpg");
+}
+#s5{
+   background-image:url("https://i.loli.net/2020/01/02/o57QW6Cx4HXz98F.jpg");
+}
+#s6{
+   background-image:url("https://i.loli.net/2020/01/02/mELReOls6wCrPF8.jpg");
+}
+#s7{
+   background-image:url("https://i.loli.net/2020/01/02/4bmAwlItBECMvYW.jpg");
+}
