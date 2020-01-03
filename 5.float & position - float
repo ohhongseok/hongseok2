@@ -4,6 +4,7 @@
 //HTML 코드부분
 
 <h1>float 실습</h1>
+ <div class="line"></div>
 <div class="column1">
 	<h2>column 1</h2>
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
@@ -31,40 +32,61 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices vitae quam nec tempor. Aliquam et mattis tellus, vel aliquet ligula. In sem urna, tincidunt id molestie sit amet, viverra nec ligula. Orci varius natoque penatibus et magnis dis
 	parturient montes, nascetur ridiculus mus. Phasellus pharetra ornare dolor non condimentum. Morbi pharetra ut felis sed gravida. Maecenas vitae dapibus lectus, et egestas erat. Vivamus at leo gravida odio scelerisque vestibulum ut at neque. Pellentesque
 	dictum turpis sit amet leo blandit sagittis.
-
 </div>
+ <div class="line"></div>
 //colum 클래스가 3개가 있고, footer클래스가 있다.
 ////CSS 코드부분
 
 html
 {// 문서 전체를 잡아주는 역활
-	font-size : 20px;
-	font-weight : 180;
-	background-color : yellow;
+	 font-size :20px;
+  background-color : yellow;
 }
 .column1{
-	background-color : black;
-	color : white;
-	display : box;
-	text-align : center;
-  	float: none;
+	background-color:black;
+  color : white;
+  display : box;
+  text-align : left;
+  float:left;
+  border : 4px solid black;
+  margin : 30px 0px;
+  width : 30%;
   	//float에는 3가지 속성이 있다. left, right none,
   	//여기서 left는 왼쪽정렬, right는 오른쪽 정렬, none은 정렬을 하지 않는것
 	//width: 30%
   	//자신의 모니터 대비 좌우길이 30%만 쓰겠다는것
 }
 .column2{
-	float: left;
-	width: 30%;
+	 float : left;
+  width : 30%;
+   text-align : center;
+   margin : 30px 0px;
+  border : 4px solid blue;
 }
 .column3{
-	float: left;
-	width: 30%;
+	float : left;
+  width : 30%;
+   text-align : right;
+    background-color : black;
+  border : 4px solid black;
+  color : yellow;
+   margin : 30px 0px;
+}
+.line{
+  box-sizeing : border-box;
+  margin : 20px 0px;
+  height : 0px;
+  border : 4px dashed black;
 }
 .footer{
 //위에서 column 1~3까지 30%씩 공간을 차지하여 10%의 공간에 footer 클래스가 찡겨들어가게 된다.
 //이를 방지하기 위해 clear : both; float 속성값을 취소해 준다.
-	clear: both;
+	box-sizeing : boder-box;
+  width:90%;
+  border : 12px solid black;
+ text-align:center;
+ clear : both;
+ margin : 3px ;
 }
 
 //floating 된 요소는 블럭 박스가 된다(블럭처럼 되버림)
