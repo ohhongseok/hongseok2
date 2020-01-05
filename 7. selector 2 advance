@@ -1,0 +1,101 @@
+/*자손 선택자1*/
+<style>
+  div div{}      /*2번째 요소 선택, 무조건 공백이 있어야함*/
+</style>         /*요소 선택자 안에 특정 요소를 선택하는것*/
+<body>
+  <div>          /*1번째 요소*/
+  test1
+    <div>tet2</div>  /*2번째 요소*/
+  </div>
+</body>
+/*div div{color:red;} 라고 하면 2번째 div 요소의 text 색깔이 red가 된다.*/
+
+/*자손 선택자2*/
+<style>
+  /*div.a span{color : blue;} 라고하면 div 안에 모든 span 요소들(직계자손이 아니여도)에 적용이 된다. */
+  /*div.a > span{color : blue;} 라고 하면 class a의 "직계자손"들중 span 요소만 쓰게된다. 손주는 선택안함*/
+</style>
+<body>
+  <div class="a">
+    <span>s1</span>
+      <div>d2
+        <span>s3</span>
+      </div>
+  </div>
+</body>
+
+/*요소 선택1*/
+<style>
+  div.div {color : red}   /*div 요소 중에서 div라는 class를 선택하는것*/
+</stle>
+<body>
+  <div class="div>text</div>
+</body>
+
+/*요소 선택2*/
+<style>
+  div#div{color:blue;}    /*div 요소중 div 라는 id를 선택하는 것*/
+</style>
+<bod>
+  <div id="div">text</div>
+</body>
+
+/*요소안의 특정 자식선택1*/
+<style>
+  div .div{color: blue;}   /*div 요소 자식의 클래스명이 div인것을 고르기*/
+</style>                   /*어떠한 요소인지는 모르나(p,div,heardr...) 클래스명이 div인것*/
+<body>
+  <div>
+    <p class="div">test</p>
+  </div>
+</body>
+
+/*요소안의 특정 자식선택2*/
+<style>
+  div #div{color: blue;}   /*div 요소 자식의 id명이 div인것을 고르기*/
+</style>                   /*어떠한 요소인지는 모르나(p,div,heardr...) 클래스명이 div인것*/
+<body>
+  <div>
+    <p id="div">test</p>
+  </div>
+</body>
+
+/*요소 선택 심화*/
+/**/div.region p{}    /*div의 region 클래스의 하위 요소중 p 요소를 선택하는것*/
+/**/.region .korak {} /*region 클래스의 하위 클래스중 korea라는 클래스를 선택*/
+/**/div.div p#div{}   /*div 클래스명이 div이인것을찾고 그 div의 자손이 p요소이고, p요소의 id값이 div 인것*/
+    <div class="div">
+      <p id="div"></p>
+    </div>
+
+/**/
+/*형제선택자*/
+<style>
+  div+div{color:blue;}/*text1의 text color가 바뀌는 것이 아닌, text2의 color가 blue로 바뀌게 된다.*/
+</style>
+<body>
+  <div>text1</div>
+  <div>text2</div>
+</body>
+
+/*복수의 요소 선택하기*/
+<style>
+  div,p,h1{color : blue;}   /*모든 div, p, h1 요소에 적용하는것*/
+</style>
+<body>
+  <div>box1</div>
+  <div>box2</div>
+  <p>humble</p>
+  <h1>header></h1>
+</body>
+
+ /*타입의 특정 속성 선택자*/
+ <style>
+  input[type="text"]{border : 1px solid ted;  /*요소[속성="값]*/
+ </style>
+ <body>
+  <input type="text"><br>       /*문장 입력박스*/
+  <input type="radio"><br>      /*동그란 박스*/
+  <input type="checkbox"><br>   /*네모난 체크박스*/
+  <input type="password"><br>   /*문장 입력박스와 비슷*/
+ </body>
