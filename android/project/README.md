@@ -1,7 +1,12 @@
+<br>
 /****************************************************/
+<br>
 <--To Do List-->
+<br>
 /****************************************************/
+<br>
 -------------------------Code-------------------------
+<br>
 *DateFactory
 *WriteFactory 
 *AddDiaryActivity    -> Weather, Date, Write Section & Action 
