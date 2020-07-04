@@ -1,1 +1,1 @@
-make lamp and watch with bluetooth model
+lamp and watch with bluetooth model
