@@ -1,1 +1,1 @@
-java game project with 동빈나 java tutorial
+java game project with java tutorial
