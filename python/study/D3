@@ -1,0 +1,87 @@
+#/--------------------------------------------------------------------------/#
+#Date : 2020-08-13
+#Lecture : 나도코딩 파이썬 강의 / WikiDocs 점프투 파이썬
+
+#--------[문자열 처리함수]---------#
+print()
+python = "InnoVaTION CenTeR fOr Enginnering Education"
+print('LOWER :',python.lower())         #전부 소문자로 출력
+print()
+print('UPPER :',python.upper())         #전부 대문자로 출력
+print()
+print('T/F :',python[0].isupper())      #문자열 python[0]이 대문자인지
+print()                                 #소문자는 .islower()
+print('LENGTH :',len(python))           #문자열의 길이를 출력 len()
+print()
+#매칭되는 문자열 변경해주는 .replace(), 
+#원래 문자열과 [똑같이] 매칭되어야 문자열이 바뀌게 된다.
+print('REPLACED RESULT :',python.replace('InnoVaTION','java'))  
+print()
+indx = python.index('n')                #특정문자(문자열) n 찾아줌, 첫번째 n이 나타나는 index
+print('INDEX :',indx)
+indx = python.index('n',indx +1)        #indx+1을 하면 이전 n의 다음 위치의 n 나타남
+print('INDEX :',indx)
+print()
+print('FIND :',python.find('n'))        #얘도 똑같이 index 찾아줌
+print()
+#index, find의 차이점
+#만약 없는 문자열을 각각 find, index를 하면 
+#find의 경우 -1을 출력하지만
+#index의 경우err를 출럭한다.
+
+print('COUNTING N :',python.count('n')) #해당 문자(문자열의 출현 횟수를 출력
+print()
+
+#--------[문자열 포멧]---------#
+print()
+print("a"+"b")
+print("a","b")
+print()
+
+#방법1 ============바로넣기===============
+print()
+print("나는 %d살입니다. 1" %20)                               #int형 정수
+print("나는 %s 입니다" % "대학생")                          #string 넣기
+print("Apple은 %c로 시작한다." %"A")                        #charactor 형 변수
+print("나는 %s살입니다." %20)                               #string으로 넣을 수 있음
+print("나는 %s색과 %s색을 좋아함" %("파랑색","하늘색"))     #두개 이상의 변수 넣기
+print()
+
+#방법2  ============format 사용===============
+print("나는 {}살 입니다. 2".format(20))                           #변수 입력하는방법2
+print()
+age = input("나이를 입력하세요 : ")
+print("나는 {}살 입니다. 3" .format(age))                         #어떤 자료형이던 받을수 있음
+print()
+print("나는 {}색과 {}색을 좋아함" .format("파랑색","하늘색"))     #두개 이상의 변수 넣기
+print("나는 {0}색과 {1}색을 좋아함" .format("파랑색","하늘색"))   #이렇게 0 1로 순서를~
+print("나는 {1}색과 {0}색을 좋아함" .format("파랑색","하늘색"))   #바꿔서 넣을 수 있다.
+print()
+
+#방법3 ============format 사용 응용===============
+print("나는 {age1}살 이며, {color1}의 색을 좋아함" .format(age1=20,color1="dark"))
+print()
+
+#방법4 ============format 사용 응용===============
+#파이썬 v3.6 이상부터 가능
+country = "한국"
+countryCode = 82
+print(f"내 국적은 {country} 이며, 국가코드는 {countryCode} 임")
+
+#응용 
+c1 = input("색깔1 : ")
+c2 = input("색깔2 : ")
+print("나는 {}색과 {}색을 좋아함" .format(c1,c2))
+print()
+#--------[탈출문자]---------#
+# 문자열 내에서 ""가 한번 더 나오면 에러뜸
+# 방법은 큰따옴표 안에 작은따옴표 넣거나,
+# 작은따옴표 안에 큰따옴표 안에 넣기
+# \"SENTENCE"\ = 이렇게 해도 큰따옴표안에 큰따옴표 인식(문장 내에서 따옴표 처럼 사용)
+# \n           = c언어랑 똑같지?
+# \\           = 문장 내에서 \ 하나로 인식됨, 따라서 탈출문자와 다르게 \(역슬래쉬)로 인식
+# \r           = 커서를 맨 앞으로 이동 시켜줌
+# \r ex)
+print("Red Apple\rPine")
+# \b           = 백스페이스(한글자 삭제)
+# \t           = 탭키
