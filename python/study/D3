@@ -85,3 +85,48 @@ print()
 print("Red Apple\rPine")
 # \b           = 백스페이스(한글자 삭제)
 # \t           = 탭키
+
+
+#--------[리스트]---------#
+#순서를 가지는 객체의 집합
+#c랑 다르게 편하게 쓰면 된다
+print()
+subway = [10, 20, 30]
+print(subway)
+print()
+subway =["유재석","조세호","박명수"]
+print("배열 print :",subway)
+print()
+print("조세호가 타고있는 칸 :",subway.index("조세호")+1,"번째 칸")
+print()
+subway.append("하하")                            #맨 뒤에 추가 .append("인자")
+print("추가된 배열 :",subway)
+print()
+subway.insert(1, "정형돈")                       #특정 위치에 값 넣기 .insert(index, 인자)
+print("추가된 배열 :",subway)
+print()
+print(subway.pop())                              #특정값 추출 .pop()
+print(subway)
+print()
+subway.append("유재석")
+print("유재석 나온 횟수 :",subway.count("유재석"))
+print()
+num_list = [5,2,4,3,1,8]
+print("num_list 출력(정렬안됨) :",num_list)
+num_list.sort()                                   #오름차순 디폴트
+print("num_list 정렬(오름차순) : ",num_list)      #오름차순으로 정렬
+num_list.reverse()                                #내림차순으로 reverse
+print("num_list 정렬(내림차순) : ",num_list)      #내림차순
+num_list.clear()
+print("num_list clear 결과 :",num_list)
+print()
+
+#다양한 자료형과 함께 사용 약간 벡터같은 느낌
+mix_list=["조세호",20,True]
+print("여러 자료형 출력 결과 :",mix_list)
+
+#리스트 확장
+num_list2 = [5,2,4,3,1,8]
+num_list3 = num_list2
+num_list3.extend(mix_list)                        #믹스된 결과가 나옴
+print("리스트 확장 결과 :",num_list3)
