@@ -1,0 +1,148 @@
+#/--------------------------------------------------------------------------/#
+#Date : 2020-08-21
+#Lecture : 나도코딩 파이썬 강의 / WikiDocs 점프투 파이썬
+
+#-------------------[사전]-------------------
+#사전의 경우 중괄호로 묶으면 됨
+
+cabinet = {3:"유재석" , 100 : "조세호 "}            #ex) key = 3 의 vaule 는 유재석
+'''
+print(cabinet.items())                              #모든 아이템을 보여주는것
+print(cabinet[3])                                   #3번 아이템 유재석을 보여주는 것
+print(cabinet[100])                                 #100번 조세호 가져옴
+'''
+
+#사전 자료형에서 자료를 가져오는 또다른 방법
+"""
+print("get으로 사전의 값을 가져오는 방법\n")
+print(cabinet.get(3))
+"""
+#print(cabinet[5])                                   #할당받지 못한 값이여서 err가 뜬다.
+"""
+print(cabinet.get(5))                                #일반적인 []을 썼을때와 달리 None이 뜬다.
+print(cabinet.get(5,"사용 가능"))                    #값이 없을 때 none이 아닌 사용가능 이라 뜬다.
+"""
+
+#사전 자료형에 값이 있는지 없는지 판단하기 위한 방법
+'''
+print()
+print(3 in cabinet)                                  # key in 사전 변수 = True / False 출력
+print(5 in cabinet)
+print()
+cabinet2 = {"A-3":"유재석" , "B-100" : "조세호 "}    #KEY 값은 정수형이 굳이 안들어가도 된다.
+print(cabinet2["A-3"])
+print(cabinet2["B-100"])
+
+#사전 자료형에 새로운 값 넣기
+print()
+cabinet2["C-20"] = "김태호"
+print(cabinet2.items())
+cabinet2["C-20"] = "김종국"                          #똑같은 KEY에 새로운 값이 들어가면 UPDATE 됨
+print(cabinet2.items())
+
+#값을 뺄때
+print()
+del cabinet2["A-3"]                                  #값을 뺄 땐 del 명령어를 써서 삭제한다.
+print(cabinet2.items())
+
+#키값들만 출력할 때
+print()
+print(cabinet2.keys())                               #현재 사용하는 키값만 출력
+
+#value들만 출력할 때
+print()
+print(cabinet2.values())                             #현재 사용하는 value만 출력
+
+#사전 initialization
+cabinet2.clear()                                     #사전 자료형의 모든 값 지우기
+print()
+print(cabinet2)                                      #값이 아무것도 없을 때 {} 출력
+'''
+
+#-------------------[튜플]-------------------
+#사용에 제한 되지만, 리스트보다 빠른 속도로 구동 가능
+'''
+menu =("돈까스", "치즈까스")                         #튜플 사용시에는 괄호로 값 사용
+print(menu[0])                                      
+print(menu[1])
+print()
+
+#튜플은 값을 추가하는 .add() 를 사용할 수 없다.
+#튜플 활용
+#1. 일반 활용 변수 세개 사용후 출럭
+name1 = "김종국"
+age1 = 20
+hobby1 = "코딩"
+print(name1,age1,hobby1)
+
+#튜플 형태
+print()
+name2, age2, hobby2 ="김종국",20,"코딩"
+print(name2,age2,hobby2)
+'''
+
+#-------------------[세트]-------------------
+"""
+#집합(set)
+#중복이 안되고, 순서가 없는것
+my_set={1,2,3,3,3,4}
+print(my_set)                                        #중복된 값 3은 없다
+print()
+
+#교집합 값 뽑아내기
+java = {"유재석", "김종국","김태호"}
+python = set(["유재석","박명수"])
+
+print(java & python)                                 #교집합 뽑기 1
+print(java.intersection(python))                     #교집합 뽑기 2
+#만약 교집합이 없다면, set()을 출력 한다.
+
+#합집합 뽑아내기
+print()
+print(java | python)                                 #합집합 뽑기1
+print(java.union(python))                            #합집합 뽑기2
+
+#차집합 뽑기(java 할 수 있지만 python 할 줄 모르는 개발자)
+print()
+print(java - python)                                 #차집합 뽑기1
+print(java.difference(python))                       #차집합 뽑기2
+
+#값을 추가할 때
+print()
+python.add("김태호")
+print(python)
+
+#값을 뺄때
+print()
+java.remove("김태호")
+print(java)
+"""
+#-------------------[자료구조의 변경]-------------------
+"""
+print()
+menu = {"커피", "우유", " 주스"}
+print(menu,type(menu))                               #menu의 자료형태는 set {}
+
+print()
+menu = list(menu)
+print(menu,type(menu))                               #menu의 자료형태는 list []
+
+print()
+menu = tuple(menu)
+print(menu,type(menu))                               #menu의 자료형태는 tuple ()
+
+menu = set(menu)
+"""
+
+"""
+#예제 풀기
+from random import *
+list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#list = range(1,21)                                  #1부터 20까지의 숫자 생성
+list=set(list)
+chickin = sample(list,1)
+chickin = set(chickin)
+print("치킨 당첨자 :",chickin)
+list2 = list - chickin
+print("커피 당첨자 :",sample(list2,3))
+"""
