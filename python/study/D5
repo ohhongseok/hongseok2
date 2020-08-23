@@ -1,0 +1,133 @@
+#/--------------------------------------------------------------------------/#
+#Date : 2020-08-23
+#Lecture : 나도코딩 파이썬 강의 / WikiDocs 점프투 파이썬
+
+#-------------------[분기문 if]-------------------
+'''
+weather = input("날씨를 입력하세요 : ")
+if weather == "비" :
+    print("우산을 챙기세요")
+elif weather =="미세먼자":                  #c언어에서 else if랑 똑같
+    print("마스크를 챙기세요")
+else :
+    print("준비할게 없어요")
+'''
+'''
+#or and 연산자 활용법
+weather = input("날씨를 입력하세요 : ")
+if weather == "비" or weather == "눈":      #이렇게 and or 활용하면 된다.
+    print("우산을 챙기세요")
+elif weather =="미세먼자":                  #c언어에서 else if랑 똑같
+    print("마스크를 챙기세요")
+else :
+    print("준비할게 없어요")
+'''
+'''
+#and 연산자 활용법
+temp =int(input("온도를 입력하세요 : "))    #사용자가 입력하게 하기,온도는 보통 정수형이여서 int로 형 변환 한것
+if 30 <=temp :
+    print("너무 덥습니다ㅠ")
+elif 10 <= temp and temp < 30 :             #and 활용 첫번째 and 예약어 사용하기
+    print("괜찮은 날씨예요")
+elif 0 <= temp <10 :                        #and 활용 실생활처럼 사용하기 존나 좋네
+    print("외투를 챙기세요")
+else :
+    print("너무추웤")
+'''
+
+#-------------------[반복문 for]-------------------
+'''
+for waiting_no in [0,1,2,3,4]:                  #리스트 내의값이 waiting_no에 들어가고
+    print("대기번호 : {0}".format(waiting_no))   #출력
+print()
+for waiting_no in range(6) :                     # 1~6
+     print("대기번호 : {0}".format(waiting_no))   #출력
+print()
+for waiting_no in range(1,6) :                   # 1 ~ 5
+    print ("대기번호 : {0}".format(waiting_no))
+
+print()
+starbucks =["아이언맨","토르","그루트"]
+for customer in starbucks :
+    print("{0} 님, 커피가 준비되었습니다.".format(customer))
+'''
+
+#-------------------[반복문 while]-------------------
+'''
+customer = "중국이"
+index = 5
+while index >=1 :
+    print("{0}님, 커피가 준비되었습니다. {1}번 남았습니다.".format(customer,index))
+    index -= 1
+    if index ==0 :
+        print("커파가 폐기되었습니다.")
+'''
+
+#탈출조건 만들기 [값을 입력해서 원하는 값일때 까지 반복]
+'''
+customer = "토르"
+person ="Unknown"
+while person != customer :                                  #조건을 만족 할때까지
+    print("{0}님, 커피가 준비 되었습니다.".format(customer))
+    person = input("성함이 어떻게 되십니까> : ")
+'''
+
+#-------------------[반복문 안에서 사용하는 continue , break]-------------------
+'''
+absent = [2 ,5]                         #결석한 번호 2번 5번
+noBook = [7]                            #책이 없는 학생 7번
+for student in range(1,11):             #1 ~ 10번까지
+    if student in absent :              #결석한 학생이라면
+        continue                        #continue
+    elif student in noBook :            
+        print("오늘 수업은 여기까지. {0}번은 교무실로" .format(student))
+        break                           #break는 뒤에 어떤 문장, 반복이든 반복문 탈출
+    print("{0}번 책읽어".format(student))
+'''
+
+#-------------------[for문 응용]-------------------
+'''
+student = [1,2,3,4,5]
+print(student)
+student = [i+100 for i in student]      #약간 사용법이 어색하다 이거
+print(student)
+print()
+
+students = ["iron man", "thor", "i am groot"]
+students = [len(i) for i in students]   #len(i)를 구하는데, students 안에 있는 배열 수만큼
+print(students)                         #프린트를 한다.
+
+students = ["iron man", "thor", "i am groot"]
+students = [i.upper() for i in students]   #대문자로 바꾸는데, students 안에 있는 배열 수만큼
+print(students)                            #프린트를 한다.
+'''
+
+#-------------------[함수]-------------------
+#basic : 함수를 실행할 땐 def를 사용해 함수를 선언한다.
+def open_account():
+    print("새로운 계좌가 생성되었습니다.")
+                                       #함수 호출로 함수 사용
+
+def deposit(balance, money):
+    print("입금이 완료 되었습니다. 잔액은 {0}원 입니다.".format(balance+money))
+    return balance+money
+
+def withdraw(balance, money) :
+    if balance >= money :
+        print("출금이 완료 되었습니다. 잔액은 {0}원 입니다.".format(balance-money))
+        return balance - money
+    else :
+        print("계좌에 잔액이 부족합니다. 잔액은 {0}원 입니다.".format(balance))
+        return balance
+
+def withdrawNight(balance, money) :
+    commission = 100
+    return commission , balance - money - commission
+
+open_account()   
+balance = 5000
+inputMoney = int(input("입금할 금액을 입력 하세요 : "))
+deposit(balance , inputMoney)
+
+withdrawMoney = int(input("출금할 금액을 입력하세요 : "))
+withdraw(balance,withdrawMoney)
