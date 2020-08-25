@@ -1,0 +1,163 @@
+#/--------------------------------------------------------------------------/
+#Date : 2020-08-25
+#Lecture : 나도코딩 파이썬 강의 / WikiDocs 점프투 파이썬
+
+#-------------------[함수 기본값]-------------------
+'''
+def profile(name, age, main_lang):
+    print("이름 : {0}\t 나이 : {1}\t 주 사용 언어 : {2}\n".format(name, age,main_lang))
+
+profile("유재석", 20, "파이썬")
+profile("조세호", 20, "자바")
+
+
+#디폴트매개변수
+def profile2(name, age=17, main_lang="파이썬"):
+    print("이름 : {0}\t 나이 : {1}\t 주 사용 언어 : {2}\n".format(name, age,main_lang))
+
+
+profile2("유재석")
+profile2("조세호")
+profile2("조세호", 20)                     #이렇게 값이 달라도 됨
+'''
+#-------------------[키워드값]-------------------
+# 아래와 같이 인자가 뒤죽박죽 넘어가도
+# 키워드가 있으면 값을 쓸때 아무런 문제 없이 출력이 가능하다.
+'''
+def profile(name, age, main_lang):
+    print(name, age , main_lang)
+print()
+profile(name="유재석",  main_lang="파이썬", age=20)
+'''
+
+'''
+#-------------------[가변인자]-------------------
+# 기본1 가변적인인자를 쉽게 다루기
+
+def profile(name, age, lang1,lang2,lang3,lang4,lang5):
+    print("이름 : {0}\t 나이 : {1}".format(name, age), end="")
+    print(lang1,lang2,lang3,lang4,lang5)
+
+print()
+profile("유재석",20,"Python","C","C++","C#","JAVA")
+profile("김태호",25,"Python","C","","","")
+print()
+
+# 만약 유재석의 값이 바뀔땐 함수 선언부 자체를 바꿔야 할 수 있다.
+# 따라서 가변인자를 사용
+
+# *매개변수명을 사용하면 배열처럼 저장된다.
+def profile2(name, age, *language):
+    print("이름 : {0}\t 나이 : {1}".format(name, age), end="")
+    for lang in language :          #반복해서 출력하기
+        print(lang, end=" ")
+    print()
+
+print()                             #매개변수가 몇개가 와도 할 수있음
+profile2("유재석",20,"Python","C","C++","C#","JAVA","JavaScript")
+profile2("김태호",25,"Python","C","","","")
+print()
+'''
+
+#-------------------[지역변수와 전역변수]-------------------
+
+#######지역변수
+# gun = 10
+
+# def checkpoint(solders):
+#     gun=20                          #함수내 지역변수 gun
+#     gun = gun - solders
+#     print("[함수 내] 남은 총의 갯수 : {0}".format(gun))
+
+# print("전체 총 : {0}".format(gun))
+# checkpoint(2)
+# print("전체 총 : {0}".format(gun))
+
+#######전역변수  사용하기
+# gun = 10
+
+# def checkpoint(solders):
+#     global gun                          #전역변수 선언방법 global 키워드
+#     gun = gun - solders
+#     print("[함수 내] 남은 총의 갯수 : {0}".format(gun))
+
+# print("전체 총 : {0}".format(gun))
+# checkpoint(2)
+# print("전체 총 : {0}".format(gun))      #함수 시행 후에도 값이 변하지 않는다.
+
+#######위 방식의 단점은, 전역번수(global)을 많이 사용하면 코드 관리의 문제가 생긴다.
+
+#######전역변수 대안책 return 값을 저장하여 값을 외부에서도
+#######사용할 수 있게 해준다.
+# gun=10
+# def checkpoint_return(gun2,solder2):
+#     gun2=gun2-solder2
+#     print("[함수 내] 남은 총의 갯수 : {0}".format(gun))
+#     return gun2   #함수 바깥의 gun에 남은 총의 갯수를 저장
+
+# gun=checkpoint_return(gun,2)
+# print("남은 총 : {0}".format(gun))
+
+#예제 문제풀기
+# def std_weight(height , gender):
+#     if gender =="남자":
+#         return height*height*22
+#     else :
+#         return height*height*21
+    
+# height = 175
+# gender = "남자"
+
+# standard = round(std_weight(height/100,gender),2)
+# print("키 {0}cm {1}의 표준체중은 {2}kg 입니다.".format(height,gender,standard))
+
+#-------------------[표준 입출력]-------------------
+#입출력 문자 sep 활용하기
+# print()
+# print("Python","Java","JavaScript",sep=" vs ",end=" ? ")
+# print("뭐가 더 재밌을까")
+
+'''
+end의 의미
+이전까지 print(example)을 쓰면 example 문장의 끝이 줄바꿈 문자였지만
+end를 쓰면, 문장의 마지막이 줄바꿈 문자에서 ? 로 바뀌게 되고
+다음 문장을출력할때 줄바꿈이 아닌 바로옆에서 출력하게 된다.
+'''
+
+'''
+import sys
+print("Python","Java",file=sys.stdout)      #표준출력으로 문자출력
+print("Python","Java",file=sys.stderr)      #표준 에러로 문자 처리
+'''
+
+'''
+print()
+score={"수학":0,"영어":50,"코딩":100}   
+# for subject, score in score.items():
+#     print(subject,score)
+
+print("\n더 나은 출력물을 위한결과\n")
+for subject, score in score.items():
+    print(subject.ljust(8), str(score).rjust(4),sep=":")
+#.ljust(number) = number의 공간을 확보 한 후 왼쪽 정렬
+#.rjust(number) = number의 공간을 확보 한 후 오른쪽 정렬
+
+
+print()
+for num in range(1,21):
+    print("대기번호 : " +str(num).zfill(3))
+#.zfill(number) = number의 공간만큼 확보를하고 \
+#나머지 빈공간은 0으로 채운다.
+'''
+
+##사용자입력 input 의 특징
+'''
+print()
+answer1 = 10
+answer2 = input("아무 값이나 입력하세요 : ")
+print(type(answer1))
+print(type(answer2))
+print("int로 값을입력하면 정수로입력하든, 문자를입력하든")
+print("str로 받아들인다.")
+print()
+'''
